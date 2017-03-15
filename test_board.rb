@@ -10,7 +10,41 @@ class TestBoard < Minitest::Test
 	def test_update_with_x_at_position_1
 	board = Board.new 
 	board.update_board(0,"x")
-	assert_equal(Array.new(["x", "", "", "", "", "", "", "", ""],board.ttboard))
+	assert_equal(["x", "", "", "", "", "", "", "", ""],board.tttboard)
+	end
+
+	def test_update_with_x_at_position_1_o_at_position_9
+	board = Board.new 
+	board.update_board(0,"x")
+	board.update_board(8,"o")
+	assert_equal(["x", "", "", "", "", "", "", "", "o"],board.tttboard)
+	end
+
+	def test_update_with_x_at_position_1_o_at_position_9_x_at_position_8
+	board = Board.new 
+	board.update_board(0,"x")
+	board.update_board(8,"o")
+	board.update_board(7,"x")
+	assert_equal(["x", "", "", "", "", "", "", "x", "o"],board.tttboard)
+	end
+
+	def test_update_with_x_at_position_1_o_at_position_9_x_at_position_8_o_at_postion_4
+	board = Board.new 
+	board.tttboard = ["x", "", "", "o", "", "", "", "x", "o"]
+	board.update_board(3,"o")
+	assert_equal(["x", "", "", "o", "", "", "", "x", "o"],board.tttboard)
+	end
+
+	def test_open_space
+	board = Board.new 
+	board.tttboard = ["x", "x", "", "o", "o", "", "", "x", "o"]
+	assert_equal(true,board.open_space?(2))
+	end
+
+	def test_taken_space
+	board = Board.new 
+	board.tttboard = ["x", "x", "", "o", "o", "", "", "x", "o"]
+	assert_equal(false,board.open_space?(0))
 	end
 
 
