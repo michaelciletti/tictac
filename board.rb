@@ -30,16 +30,57 @@ attr_accessor :tttboard
 	end
 
 	def board_tie(marker)
-		if tttboard.count("") == 0 
+		if tttboard.count("") == 0 &&
+			tttboard[0] != marker && tttboard[1] == marker && tttboard[2] == marker ||
+			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] == marker ||
 			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] != marker ||
+			tttboard[0] == marker && tttboard[1] != marker && tttboard[2] != marker ||
+			tttboard[0] == marker && tttboard[1] == marker && tttboard[2] != marker ||
+			tttboard[0] == marker && tttboard[1] != marker && tttboard[2] == marker ||
+			tttboard[3] != marker && tttboard[4] == marker && tttboard[5] == marker ||
+			tttboard[3] != marker && tttboard[4] != marker && tttboard[5] == marker ||
 			tttboard[3] != marker && tttboard[4] != marker && tttboard[5] != marker ||
-		    tttboard[6] != marker && tttboard[7] != marker && tttboard[8] != marker ||
+			tttboard[3] == marker && tttboard[4] != marker && tttboard[5] != marker ||
+			tttboard[3] == marker && tttboard[4] == marker && tttboard[5] != marker ||
+			tttboard[3] == marker && tttboard[4] != marker && tttboard[5] == marker ||
+			tttboard[6] != marker && tttboard[7] == marker && tttboard[8] == marker ||
+			tttboard[6] != marker && tttboard[7] != marker && tttboard[8] == marker ||
+			tttboard[6] != marker && tttboard[7] != marker && tttboard[8] != marker ||
+			tttboard[6] == marker && tttboard[7] != marker && tttboard[8] != marker ||
+			tttboard[6] == marker && tttboard[7] == marker && tttboard[8] != marker ||
+			tttboard[6] == marker && tttboard[7] != marker && tttboard[8] == marker ||
+			tttboard[0] != marker && tttboard[3] == marker && tttboard[6] == marker ||
+			tttboard[0] != marker && tttboard[3] != marker && tttboard[6] == marker ||
 			tttboard[0] != marker && tttboard[3] != marker && tttboard[6] != marker ||
+			tttboard[0] == marker && tttboard[3] != marker && tttboard[6] != marker ||
+			tttboard[0] == marker && tttboard[3] == marker && tttboard[6] != marker ||
+			tttboard[0] == marker && tttboard[3] != marker && tttboard[6] == marker ||
+			tttboard[1] != marker && tttboard[4] == marker && tttboard[7] == marker ||
+			tttboard[1] != marker && tttboard[4] != marker && tttboard[7] == marker ||
 			tttboard[1] != marker && tttboard[4] != marker && tttboard[7] != marker ||
+			tttboard[1] == marker && tttboard[4] != marker && tttboard[7] != marker ||
+			tttboard[1] == marker && tttboard[4] == marker && tttboard[7] != marker ||
+			tttboard[1] == marker && tttboard[4] != marker && tttboard[7] == marker ||
+			tttboard[2] != marker && tttboard[5] == marker && tttboard[8] == marker ||
+			tttboard[2] != marker && tttboard[5] != marker && tttboard[8] == marker ||
 			tttboard[2] != marker && tttboard[5] != marker && tttboard[8] != marker ||
+			tttboard[2] == marker && tttboard[5] != marker && tttboard[8] != marker ||
+			tttboard[2] == marker && tttboard[5] == marker && tttboard[8] != marker ||
+			tttboard[2] == marker && tttboard[5] != marker && tttboard[8] == marker ||
+			tttboard[2] != marker && tttboard[4] == marker && tttboard[6] == marker ||
+			tttboard[2] != marker && tttboard[4] != marker && tttboard[6] == marker ||
 			tttboard[2] != marker && tttboard[4] != marker && tttboard[6] != marker ||
-			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] != marker
+			tttboard[2] == marker && tttboard[4] != marker && tttboard[6] != marker ||
+			tttboard[2] == marker && tttboard[4] == marker && tttboard[6] != marker ||
+			tttboard[2] == marker && tttboard[4] != marker && tttboard[6] == marker ||
+			tttboard[0] != marker && tttboard[4] == marker && tttboard[8] == marker ||
+			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] == marker ||
+			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] != marker ||
+			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] != marker ||
+			tttboard[0] == marker && tttboard[4] == marker && tttboard[8] != marker ||
+			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] == marker 
 			return "Tie!"
+
 		end
 	end
 
