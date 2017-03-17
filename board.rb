@@ -30,7 +30,7 @@ attr_accessor :tttboard
 	end
 
 	def board_tie(marker)
-		if tttboard.count("") == 0 &&
+		if 
 			tttboard[0] != marker && tttboard[1] == marker && tttboard[2] == marker ||
 			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] == marker ||
 			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] != marker ||
@@ -78,7 +78,8 @@ attr_accessor :tttboard
 			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] != marker ||
 			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] != marker ||
 			tttboard[0] == marker && tttboard[4] == marker && tttboard[8] != marker ||
-			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] == marker 
+			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] == marker &&
+			tttboard.count("") == 0 
 			return "Tie!"
 
 		end
