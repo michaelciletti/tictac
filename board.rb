@@ -3,7 +3,7 @@ class Board
 attr_accessor :tttboard
 	
 	def initialize()
-		@tttboard = Array.new(9, "")
+		@tttboard = Array.new(9, " ")
 	end
 
 	def update_board(position, marker)
@@ -11,11 +11,11 @@ attr_accessor :tttboard
 	end
 
 	def open_space?(position)
-		tttboard[position] == ""
+		tttboard[position] == " "
 	end
 
 	def full_board?()
-		tttboard.count("") == 0
+		tttboard.count(" ") == 0
 	end
 
 	def board_win?(marker)
@@ -29,60 +29,8 @@ attr_accessor :tttboard
 		tttboard[0] == marker && tttboard[4] == marker && tttboard[8] == marker
 	end
 
-	def board_tie(marker)
-		if 
-			tttboard[0] != marker && tttboard[1] == marker && tttboard[2] == marker ||
-			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] == marker ||
-			tttboard[0] != marker && tttboard[1] != marker && tttboard[2] != marker ||
-			tttboard[0] == marker && tttboard[1] != marker && tttboard[2] != marker ||
-			tttboard[0] == marker && tttboard[1] == marker && tttboard[2] != marker ||
-			tttboard[0] == marker && tttboard[1] != marker && tttboard[2] == marker ||
-			tttboard[3] != marker && tttboard[4] == marker && tttboard[5] == marker ||
-			tttboard[3] != marker && tttboard[4] != marker && tttboard[5] == marker ||
-			tttboard[3] != marker && tttboard[4] != marker && tttboard[5] != marker ||
-			tttboard[3] == marker && tttboard[4] != marker && tttboard[5] != marker ||
-			tttboard[3] == marker && tttboard[4] == marker && tttboard[5] != marker ||
-			tttboard[3] == marker && tttboard[4] != marker && tttboard[5] == marker ||
-			tttboard[6] != marker && tttboard[7] == marker && tttboard[8] == marker ||
-			tttboard[6] != marker && tttboard[7] != marker && tttboard[8] == marker ||
-			tttboard[6] != marker && tttboard[7] != marker && tttboard[8] != marker ||
-			tttboard[6] == marker && tttboard[7] != marker && tttboard[8] != marker ||
-			tttboard[6] == marker && tttboard[7] == marker && tttboard[8] != marker ||
-			tttboard[6] == marker && tttboard[7] != marker && tttboard[8] == marker ||
-			tttboard[0] != marker && tttboard[3] == marker && tttboard[6] == marker ||
-			tttboard[0] != marker && tttboard[3] != marker && tttboard[6] == marker ||
-			tttboard[0] != marker && tttboard[3] != marker && tttboard[6] != marker ||
-			tttboard[0] == marker && tttboard[3] != marker && tttboard[6] != marker ||
-			tttboard[0] == marker && tttboard[3] == marker && tttboard[6] != marker ||
-			tttboard[0] == marker && tttboard[3] != marker && tttboard[6] == marker ||
-			tttboard[1] != marker && tttboard[4] == marker && tttboard[7] == marker ||
-			tttboard[1] != marker && tttboard[4] != marker && tttboard[7] == marker ||
-			tttboard[1] != marker && tttboard[4] != marker && tttboard[7] != marker ||
-			tttboard[1] == marker && tttboard[4] != marker && tttboard[7] != marker ||
-			tttboard[1] == marker && tttboard[4] == marker && tttboard[7] != marker ||
-			tttboard[1] == marker && tttboard[4] != marker && tttboard[7] == marker ||
-			tttboard[2] != marker && tttboard[5] == marker && tttboard[8] == marker ||
-			tttboard[2] != marker && tttboard[5] != marker && tttboard[8] == marker ||
-			tttboard[2] != marker && tttboard[5] != marker && tttboard[8] != marker ||
-			tttboard[2] == marker && tttboard[5] != marker && tttboard[8] != marker ||
-			tttboard[2] == marker && tttboard[5] == marker && tttboard[8] != marker ||
-			tttboard[2] == marker && tttboard[5] != marker && tttboard[8] == marker ||
-			tttboard[2] != marker && tttboard[4] == marker && tttboard[6] == marker ||
-			tttboard[2] != marker && tttboard[4] != marker && tttboard[6] == marker ||
-			tttboard[2] != marker && tttboard[4] != marker && tttboard[6] != marker ||
-			tttboard[2] == marker && tttboard[4] != marker && tttboard[6] != marker ||
-			tttboard[2] == marker && tttboard[4] == marker && tttboard[6] != marker ||
-			tttboard[2] == marker && tttboard[4] != marker && tttboard[6] == marker ||
-			tttboard[0] != marker && tttboard[4] == marker && tttboard[8] == marker ||
-			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] == marker ||
-			tttboard[0] != marker && tttboard[4] != marker && tttboard[8] != marker ||
-			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] != marker ||
-			tttboard[0] == marker && tttboard[4] == marker && tttboard[8] != marker ||
-			tttboard[0] == marker && tttboard[4] != marker && tttboard[8] == marker &&
-			tttboard.count("") == 0 
-			return "Tie!"
-
-		end
+	def board_tie?(marker)
+		full_board?() == true  && board_win?(marker) == false
 	end
 
 end

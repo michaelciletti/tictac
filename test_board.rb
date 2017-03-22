@@ -132,14 +132,35 @@ class TestBoard < Minitest::Test
 		board = Board.new 
 		board.tttboard = ["o", "o", "x", "x", "x", "o", "o", "x", "o"]
 		marker = "x"
-		assert_equal("Tie!", board.board_tie(marker))
+		assert_equal(true, board.board_tie?(marker))
 	end
 
 	def test_tie_2
 		board = Board.new 
 		board.tttboard = ["o", "x", "o", "o", "x", "x", "x", "o", "o"]
 		marker = "x"
-		assert_equal("Tie!", board.board_tie(marker))
+		assert_equal(true, board.board_tie?(marker))
+	end
+
+	def test_tie_3
+		board = Board.new 
+		board.tttboard = ["x", "", "", "", "x", "", "", "", "x"]
+		marker = "x"
+		assert_equal(false, board.board_tie?(marker))
+	end
+
+	def test_tie_4
+		board = Board.new 
+		board.tttboard = ["x", "x", "x", "o", "x", "o", "o", "x", "o"]
+		marker = "x"
+		assert_equal(false, board.board_tie?(marker))
+	end
+
+	def test_tie_5
+		board = Board.new 
+		board.tttboard = ["x", "x", "", "o", "o", "o", "x", "", ""]
+		marker = "x"
+		assert_equal(false, board.board_tie?(marker))
 	end
 
 end
