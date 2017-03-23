@@ -45,7 +45,7 @@ class Console
 
 	def finish()
 		if board.board_win?(current_player.marker) 
-			puts "Winner is "
+			puts "Winner is #{current_player.marker}"
 		else 
 			puts "Tie"
 		end
