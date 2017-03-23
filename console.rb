@@ -13,11 +13,12 @@ class Console
 	end
 
 	def display_board
-		puts " #{board.tttboard[0]} | #{board.tttboard[1]} | #{board.tttboard[2]} "
-		puts "-----------"
-		puts " #{board.tttboard[3]} | #{board.tttboard[4]} | #{board.tttboard[5]} "
-		puts "-----------"
-		puts " #{board.tttboard[6]} | #{board.tttboard[7]} | #{board.tttboard[8]} "
+		puts "Let's Play Some Tic-Tac-Toe!!!"
+		puts " 	 #{board.tttboard[0]} | #{board.tttboard[1]} | #{board.tttboard[2]} "
+		puts "	---+---+---"
+		puts " 	 #{board.tttboard[3]} | #{board.tttboard[4]} | #{board.tttboard[5]} "
+		puts "	---+---+---"
+		puts " 	 #{board.tttboard[6]} | #{board.tttboard[7]} | #{board.tttboard[8]} "
 	end
 
 	def get_move
@@ -47,7 +48,7 @@ class Console
 		if board.board_win?(current_player.marker) 
 			puts "Winner is #{current_player.marker}"
 		else 
-			puts "Tie"
+			puts "No Winner--Tie"
 		end
 			
 	end
