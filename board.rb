@@ -3,19 +3,23 @@ class Board
 attr_accessor :tttboard
 	
 	def initialize()
-		@tttboard = Array.new(9, " ")
+		# @tttboard = Array.new(9, " ")
+		@tttboard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
 	end
 
 	def update_board(position, marker)
-		tttboard[position] = marker
+		tttboard[position - 1] = marker
 	end
 
 	def open_space?(position)
-		tttboard[position] == " "
+		# tttboard[position] == " "
+		tttboard[position] == "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9"
 	end
 
 	def full_board?()
-		tttboard.count(" ") == 0
+		# tttboard.count(" ") == 0
+		tttboard.count("1" && "2" && "3" && "4" && "5" && "6" && "7" && "8" && "9") == 0
 	end
 
 	def board_win?(marker)

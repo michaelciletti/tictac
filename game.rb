@@ -6,10 +6,12 @@ require_relative "console.rb"
  		game.display_board
 
  	until game.game_over?
- 		game.change_player
+ 	 	game.change_player
  		move = game.get_move
  		game.make_move(move)
  		game.display_board
+ 		# game.game_over?
+ 		# game.change_player
  	end
  		game.finish
 
