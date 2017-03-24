@@ -17,7 +17,7 @@ class Console
 		puts " 	 #{board.tttboard[0]} | #{board.tttboard[1]} | #{board.tttboard[2]} "
 		puts "	---+---+---"
 		puts " 	 #{board.tttboard[3]} | #{board.tttboard[4]} | #{board.tttboard[5]} "
-		puts "	---+---+---"
+		puts "	---+------"
 		puts " 	 #{board.tttboard[6]} | #{board.tttboard[7]} | #{board.tttboard[8]} "
 	end
 
