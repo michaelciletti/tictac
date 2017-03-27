@@ -9,7 +9,7 @@ attr_accessor :tttboard
 	end
 
 	def update_board(position, marker)
-		tttboard[position - 1] = marker
+		tttboard[position - 1] = marker  # - 1 messes the game up
 	end
 
 	def open_space?(position)
