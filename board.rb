@@ -9,7 +9,7 @@ attr_accessor :tttboard
 	end
 
 	def update_board(position, marker)
-		tttboard[position - 1] = marker  # - 1 messes the game up
+		tttboard[position] = marker  # - 1 messes the game up
 	end
 
 	def open_space?(position)
@@ -30,11 +30,11 @@ attr_accessor :tttboard
 		tttboard[1] == marker && tttboard[4] == marker && tttboard[7] == marker ||
 		tttboard[2] == marker && tttboard[5] == marker && tttboard[8] == marker ||
 		tttboard[2] == marker && tttboard[4] == marker && tttboard[6] == marker ||
-		tttboard[0] == marker && tttboard[4] == marker && tttboard[8] == marker
+		tttboard[0] == marker && tttboard[4] == marker && tttboard[8] == marker		
 	end
 
-	def board_tie?(marker)
-		full_board?() == true  && board_win?(marker) == false
+		def board_tie?()
+		full_board?() == true && board_win?("x") == false && board_win?("o") == false
 	end
 
 end

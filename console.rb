@@ -40,8 +40,8 @@ class Console
 	end
 
 	def game_over?()
-		board.board_win?(current_player.marker) || board.full_board?() 
-		
+		# board.board_win?(current_player.marker) || board.full_board?() 
+		board.board_win?(current_player.marker) || board.board_tie?()
 	end
 
 	def finish()
