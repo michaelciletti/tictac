@@ -4,7 +4,7 @@ require_relative "board.rb"
 class TestBoard < Minitest::Test
 	def test_new_board
 		board = Board.new 
-		assert_equal(Array.new(9, ""), board.tttboard)
+		assert_equal(["1", "2", "3", "4", "5", "6", "7", "8", "9"], board.tttboard)
 	end
 
 	def test_update_with_x_at_position_1
@@ -17,7 +17,7 @@ class TestBoard < Minitest::Test
 		board = Board.new 
 		board.update_board(0,"x")
 		board.update_board(8,"o")
-		assert_equal(["x", "", "", "", "", "", "", "", "o"], board.tttboard)
+		assert_equal(["x", "2", "3", "4", "5", "6", "7", "8", "o"], board.tttboard)
 	end
 
 	def test_update_with_x_at_position_1_o_at_position_9_x_at_position_8
@@ -25,7 +25,7 @@ class TestBoard < Minitest::Test
 		board.update_board(0,"x")
 		board.update_board(8,"o")
 		board.update_board(7,"x")
-		assert_equal(["x", "", "", "", "", "", "", "x", "o"], board.tttboard)
+		assert_equal(["x", "2", "3", "4", "5", "6", "7", "x", "o"], board.tttboard)
 	end
 
 	def test_update_with_x_at_position_1_o_at_position_9_x_at_position_8_o_at_postion_4
@@ -139,7 +139,7 @@ class TestBoard < Minitest::Test
 		board = Board.new 
 		board.tttboard = ["o", "x", "o", "o", "x", "x", "x", "o", "o"]
 		marker = "x"
-		assert_equal(true, board.board_tie?(marker))
+		assert_equal(true, board.board_tie?)
 	end
 
 	def test_tie_3
