@@ -132,7 +132,7 @@ class TestBoard < Minitest::Test
 		board = Board.new 
 		board.tttboard = ["o", "o", "x", "x", "x", "o", "o", "x", "o"]
 		marker = "x"
-		assert_equal(true, board.board_tie?(marker))
+		assert_equal(true, board.board_tie?)
 	end
 
 	def test_tie_2
