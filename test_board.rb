@@ -62,7 +62,7 @@ class TestBoard < Minitest::Test
 	def test_nonfull_board
 		board = Board.new 
 		board.tttboard = ["x", "x", "x", "o", "o", "x", "x", "x", ""]
-		assert_equal(false, board.full_board?())
+		assert_equal(true, board.full_board?())
 	end
 
 	def test_win_x1
