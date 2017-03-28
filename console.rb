@@ -23,7 +23,6 @@ class Console
 
 	def get_move
 		current_player.get_move(board)
-	# puts "I am test"
 	end
 
 	def make_move(move)
@@ -40,7 +39,6 @@ class Console
 	end
 
 	def game_over?()
-		# board.board_win?(current_player.marker) || board.full_board?() 
 		board.board_win?(current_player.marker) || board.board_tie?()
 	end
 
