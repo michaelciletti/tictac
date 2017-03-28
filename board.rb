@@ -9,17 +9,18 @@ attr_accessor :tttboard
 	end
 
 	def update_board(position, marker)
-		tttboard[position] = marker  # - 1 messes the game up
+		tttboard[position] = marker  
 	end
 
 	def open_space?(position)
 		# tttboard[position] == " "
-		tttboard[position] == "1" || "2" || "3" || "4" || "5" || "6" || "7" || "8" || "9"
+		tttboard[position] != "x" && tttboard[position] != "o"
 	end
 
 	def full_board?()
 		# tttboard.count(" ") == 0
-		tttboard.count("1" && "2" && "3" && "4" && "5" && "6" && "7" && "8" && "9") == 0
+		# tttboard.count("1" && "2" && "3" && "4" && "5" && "6" && "7" && "8" && "9") == 0
+	return tttboard[0] != "1" && tttboard[1] != "2" && tttboard[2] != "3" && tttboard[3] != "4" && tttboard[4] != "5" && tttboard[5] != "6" && tttboard[6] != "7" && tttboard[7] != "8" && tttboard[8] != "9" 
 	end
 
 	def board_win?(marker)

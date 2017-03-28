@@ -22,7 +22,7 @@ class Console
 	end
 
 	def get_move
-		current_player.get_move(board.tttboard)
+		current_player.get_move(board)
 	# puts "I am test"
 	end
 
