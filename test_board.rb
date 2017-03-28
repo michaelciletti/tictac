@@ -50,7 +50,7 @@ class TestBoard < Minitest::Test
 	def test_invalid_position
 		board = Board.new 
 		board.tttboard = ["x", "x", "", "o", "o", "", "", "x", "o"]
-		assert_equal(false, board.open_space?(11))
+		assert_equal(true, board.open_space?(11))
 	end
 
 	def test_full_board
