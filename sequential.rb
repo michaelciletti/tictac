@@ -7,5 +7,19 @@ attr_reader :marker
 	end
 
 	def get_move(board)
-	 	puts"Pick a Space"
-	 	move = gets.chomp.to_i - 1
+	 	board.each_with_index do |strings, index|  
+	 			 # p strings.to_i
+	 			# p index
+	 			unless strings.include?("o") || strings.include?("x")  
+	 			return index
+	 			end
+		end
+
+	 end
+
+
+
+
+end
+# ||  strings == "o"
+ #|| strings.include?("x")

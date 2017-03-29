@@ -1,8 +1,9 @@
 require_relative "console.rb"
 
 	
- 	game = Console.new(HumanConsole.new("x"), HumanConsole.new("o"))
-
+ 	# game = Console.new(HumanConsole.new("x"), HumanConsole.new("o"))
+	game = Console.new(SequentialConsole.rb("x"), (SequentialConsole.rb("o"))
+ 		
  		game.display_board
 
  	until game.game_over?
