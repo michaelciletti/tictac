@@ -7,12 +7,11 @@ attr_reader :marker
 	end
 
 	def get_move(board)
+	 	p board
 	 	board.each_with_index do |strings, index|  
-	 			 # p strings.to_i
-	 			# p index
-	 			unless strings.include?("o") || strings.include?("x")  
+	 			# unless strings.include?("o") || strings.include?("x")  
 	 			return index
-	 			end
+	 			# end
 		end
 
 	 end
