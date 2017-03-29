@@ -3,10 +3,10 @@ require_relative "sequential.rb"
 
 class TestSequential < Minitest::Test
 	
-	# def test_first_space_availabe
-	# 	player = SequentialConsole.new("x")
-	# 	assert_equal("x",player.marker)
-	# end
+	def test_first_space_availabe
+		player = SequentialConsole.new("x")
+		assert_equal("x",player.marker)
+	end
 
 	def test_empty_board_fills_zero_position
 		player = SequentialConsole.new("x")

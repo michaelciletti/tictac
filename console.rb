@@ -1,6 +1,7 @@
 require_relative "board.rb"
 require_relative "human_console.rb"
 require_relative "sequential.rb"
+require_relative "random.rb"
 
 class Console
 	
