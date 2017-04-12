@@ -3,6 +3,11 @@
 <p> Player 2, you are O - please enter your name </p>
 <form method = "post" action = "player_2">
       <input type="text" name="p2_name">
+      <select name="p2_type">
+      <option value="Human">Human</option>
+      <option value="Sequential">Easy</option>
+      <option value="Random">Medium</option>
+      </select>
       <submit type="submit">
 	<input type="hidden" name="p1_name" value='<%=p1_name%>'>
 </form>
