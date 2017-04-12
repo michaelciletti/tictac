@@ -49,8 +49,9 @@ end
 
 get'/gameplayboard' do
 	winplayer = session[:game].current_player.marker == "x" ? "o" : "x"
+	winname = winplayer == "x" ? session[:p1_name] : session[:p2_name]
 	if session[:board].board_win?(winplayer) 
-		session[:finish] = "The winner is #{winplayer}"
+		session[:finish] = "The winner is #{winname}"
 		redirect '/gameover'
 	elsif session[:board].board_tie?()
 		session[:finish] = "Tie"
