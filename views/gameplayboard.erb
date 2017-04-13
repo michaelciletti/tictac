@@ -1,14 +1,5 @@
-<%=board[0]%>
-<%=board[1]%>
-<%=board[2]%>
-<%=board[3]%>
-<%=board[4]%>
-<%=board[5]%>
-<%=board[6]%>
-<%=board[7]%>
-<%=board[8]%>
 <form action="move" method="post">
-            <table id='board'>
+            <center><table id='board'>
                 <tr>
                     <td id='top-left'><input class='board-data' type='submit' name="square" value='<%= board[0] %>'></td>
                     <td id='top-center'><input class='board-data' type='submit' name="square" value='<%= board[1] %>'></td>
@@ -24,5 +15,5 @@
                     <td id='bottom-center'><input class='board-data' type='submit' name="square" value='<%= board[7] %>'></td>
                     <td id='bottom-right'><input class='board-data' type='submit' name="square" value='<%= board[8] %>'></td>
                 </tr>
-        </table>
+        </table></center>
         </form>
