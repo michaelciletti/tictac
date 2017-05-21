@@ -82,18 +82,18 @@ get '/cpumove' do
 
 post '/move' do
 
-	if session[:game].current_player.class == HumanConsole
-	move = params[:square].to_i-1
-	if session[:board].open_space?(move) == true
-	session[:board].update_board(move, session[:game].current_player.marker)
-	session[:game].change_player
+    if session[:game].current_player.class == HumanConsole
+    move = params[:square].to_i-1
+    if session[:board].open_space?(move) == true
+    session[:board].update_board(move, session[:game].current_player.marker)
+    session[:game].change_player
 
-	redirect '/gameplayboard'
-	else board.open_space?(board) == false
-		redirect '/badspace'
-	end
-	end
-	
+    redirect '/gameplayboard'
+    else
+        redirect '/gameplayboard'
+    end
+    end
+    
 end
 
 get '/gameover' do
